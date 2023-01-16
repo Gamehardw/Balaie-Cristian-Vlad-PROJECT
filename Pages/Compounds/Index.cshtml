@@ -1,0 +1,72 @@
+﻿@page
+@model Balaie_Cristian_Vlad_PROJECT.Pages.Compounds.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Compound[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compound[0].Metal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compound[0].MetalQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compound[0].Metalloid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compound[0].MetalloidQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compound[0].NonMetal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compound[0].NonMetalQuantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Compound) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Metal.MetalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetalQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Metalloid.MetalloidName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetalloidQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonMetal.NonMetalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonMetalQuantity)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

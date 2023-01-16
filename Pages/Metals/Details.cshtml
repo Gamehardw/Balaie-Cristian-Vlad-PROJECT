@@ -1,0 +1,37 @@
+﻿@page
+@model Balaie_Cristian_Vlad_PROJECT.Pages.Metals.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Metal</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Metal.MetalName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Metal.MetalName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Metal.Position)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Metal.Position)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Metal.Valency)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Metal.Valency)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Metal?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

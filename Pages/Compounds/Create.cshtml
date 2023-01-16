@@ -1,0 +1,64 @@
+﻿@page
+@model Balaie_Cristian_Vlad_PROJECT.Pages.Compounds.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Compound</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Compound.Name" class="control-label"></label>
+                <input asp-for="Compound.Name" class="form-control" />
+                <span asp-validation-for="Compound.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Compound.MetalID" class="control-label">MetalName</label>
+                <select asp-for="Compound.MetalID" class ="form-control" asp-items="ViewBag.MetalID"></select>
+                <span asp-validation-for="Compound.MetalID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Compound.MetalQuantity" class="control-label"></label>
+                <input asp-for="Compound.MetalQuantity" class="form-control" />
+                <span asp-validation-for="Compound.MetalQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Compound.MetalloidID" class="control-label">MetalloidName</label>
+                <select asp-for="Compound.MetalloidID" class ="form-control" asp-items="ViewBag.MetalloidID"></select>
+                <span asp-validation-for="Compound.MetalloidID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Compound.MetalloidQuantity" class="control-label"></label>
+                <input asp-for="Compound.MetalloidQuantity" class="form-control" />
+                <span asp-validation-for="Compound.MetalloidQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Compound.NonMetalID" class="control-label">NonMetalName</label>
+                <select asp-for="Compound.NonMetalID" class ="form-control" asp-items="ViewBag.NonMetalID"></select>
+                <span asp-validation-for="Compound.NonMetalID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Compound.NonMetalQuantity" class="control-label"></label>
+                <input asp-for="Compound.NonMetalQuantity" class="form-control" />
+                <span asp-validation-for="Compound.NonMetalQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
